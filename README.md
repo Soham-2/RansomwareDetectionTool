@@ -35,7 +35,7 @@ This project is a Python-based ransomware detection system designed to monitor a
 ├── main.py                       # Main entry point of the detector application
 ├── README.md                     # This documentation file
 ├── requirements.txt              # Python dependency list
-├── reset_simulator.py            # Helper script to revert changes made by the simulator
+├── reset_simulator.py            # Cleverly reverts filenames by removing *any* appended suffix
 └── simulator.py                  # Safe ransomware simulation script
 ```
 
@@ -91,7 +91,7 @@ To test the ransomware detection tool with the included simulator:
     *   For detailed event logs, check `logs/detections.log`.
 
 7.  **Reset Filenames (After Demo):**
-    After the simulation, you can revert the renamed files to their original names by running this in **Terminal B**:
+    After the simulation, you can revert the renamed files to their original names by running this in **Terminal B**. The `reset_simulator.py` script is now smart enough to automatically detect and remove *any* appended suffix that was added by the simulator.
     ```bash
     python reset_simulator.py
     ```
@@ -132,4 +132,8 @@ flowchart TD
 
   CreateSamples -.-> Monitor
   Simulator -.-> Monitor
-  YesAlert -.-> ResetSim
+  Monitor -.-> ResetSim
+  ResetSim -.-> CreateSamples
+  ResetSim --> End
+```
+
