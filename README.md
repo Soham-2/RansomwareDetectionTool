@@ -109,29 +109,27 @@ To test the ransomware detection tool with the included simulator:
 ```mermaid
 flowchart TD
   Start([Start])
-  Main[/"main.py\n(start & Windows startup notif)"/]
-  Monitor[/"DirectoryMonitor\n(src/monitor.py)\nwatchdog -> on_moved"/]
-  Event{File moved/renamed\n(on_moved event)}
-  Analyze["src/detector.py\nanalyze event"]
-  Type{Extension changed\nor simple rename?}
-  ExtCount["Track extension-changes\n(sliding 10s window)"]
-  RenCount["Track renames\n(sliding 10s window)"]
-  Check{Threshold exceeded?\n(MAX_EXT_CHANGES / MAX_RENAMES)}
-  NoLog[/"Log INFO (terminal)\n& continue monitoring"/]
-  YesAlert["ALERT: actions\n- log WARNING -> logs/detections.log\n- Windows popup: 'Ransomware ALERT!'\n- play critical_alert.wav\n- (optional) kill_process from src/actions.py"]
-  Simulator[/simulator.py\n(safe rapid rename -> .locked)/]
-  CreateSamples[/"create_samples.py\n(generate victim_files/)"/]
-  ResetSim["reset_simulator.py\n(revert filenames)"]
+  Main["main.py (start & Windows notif)"]
+  Monitor["DirectoryMonitor (src/monitor.py) using watchdog"]
+  Event{"File moved/renamed (on_moved)"}
+  Analyze["src/detector.py analyzes event"]
+  Type{"Extension changed or just renamed?"}
+  ExtCount["Track extension changes (10s window)"]
+  RenCount["Track renames (10s window)"]
+  Check{"Threshold exceeded? (MAX_RENAMES / MAX_EXT_CHANGES)"}
+  NoLog["Log INFO & continue monitoring"]
+  YesAlert["ALERT: log WARNING, popup notif, play critical_alert.wav"]
+  Simulator["simulator.py (safe rapid renames)"]
+  CreateSamples["create_samples.py (make victim_files)"]
+  ResetSim["reset_simulator.py (revert filenames)"]
   End([Monitoring continues])
 
-  Start --> Main --> Monitor
-  Monitor --> Event --> Analyze --> Type
+  Start --> Main --> Monitor --> Event --> Analyze --> Type
   Type -->|extension changed| ExtCount --> Check
   Type -->|renamed| RenCount --> Check
   Check -->|no| NoLog --> End
   Check -->|yes| YesAlert --> End
 
-  %% Auxiliary/test tools
   CreateSamples -.-> Monitor
   Simulator -.-> Monitor
   YesAlert -.-> ResetSim
