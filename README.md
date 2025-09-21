@@ -102,3 +102,36 @@ To test the ransomware detection tool with the included simulator:
 - They act strictly **ONLY inside the specified folder** (default: `./victim_files`).
 - **DO NOT run the simulator on important or sensitive directories.**
 - The simulator (`simulator.py`) **only renames files**; it does NOT perform encryption, deletion, or content modification of your actual files. 
+
+## Flowchart
+
+
+```mermaid
+flowchart TD
+  Start([Start])
+  Main[/"main.py\n(start & Windows startup notif)"/]
+  Monitor[/"DirectoryMonitor\n(src/monitor.py)\nwatchdog -> on_moved"/]
+  Event{File moved/renamed\n(on_moved event)}
+  Analyze["src/detector.py\nanalyze event"]
+  Type{Extension changed\nor simple rename?}
+  ExtCount["Track extension-changes\n(sliding 10s window)"]
+  RenCount["Track renames\n(sliding 10s window)"]
+  Check{Threshold exceeded?\n(MAX_EXT_CHANGES / MAX_RENAMES)}
+  NoLog[/"Log INFO (terminal)\n& continue monitoring"/]
+  YesAlert["ALERT: actions\n- log WARNING -> logs/detections.log\n- Windows popup: 'Ransomware ALERT!'\n- play critical_alert.wav\n- (optional) kill_process from src/actions.py"]
+  Simulator[/simulator.py\n(safe rapid rename -> .locked)/]
+  CreateSamples[/"create_samples.py\n(generate victim_files/)"/]
+  ResetSim["reset_simulator.py\n(revert filenames)"]
+  End([Monitoring continues])
+
+  Start --> Main --> Monitor
+  Monitor --> Event --> Analyze --> Type
+  Type -->|extension changed| ExtCount --> Check
+  Type -->|renamed| RenCount --> Check
+  Check -->|no| NoLog --> End
+  Check -->|yes| YesAlert --> End
+
+  %% Auxiliary/test tools
+  CreateSamples -.-> Monitor
+  Simulator -.-> Monitor
+  YesAlert -.-> ResetSim
