@@ -282,3 +282,32 @@
 2025-09-21 17:33:03,722 - WARNING - ⚠️ Potential ransomware detected: too many renames. Last file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note2.txt.encrypted
 2025-09-21 17:33:03,725 - INFO - Event: 'renamed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md.encrypted
 2025-09-21 17:33:03,725 - WARNING - ⚠️ Potential ransomware detected: too many renames. Last file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md.encrypted
+2025-09-21 17:46:29,040 - INFO - 🔍 Monitoring started on: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files
+2025-09-21 17:46:36,821 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\doc1.pdf.locked
+2025-09-21 17:46:37,022 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image1.jpg.locked
+2025-09-21 17:46:37,224 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image2.png.locked
+2025-09-21 17:46:37,426 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note1.txt.locked
+2025-09-21 17:46:37,627 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note2.txt.locked
+2025-09-21 17:46:37,829 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md.locked
+2025-09-21 17:46:37,829 - WARNING - ⚠️ Potential ransomware detected: too many extension changes. Last file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md.locked
+2025-09-21 17:46:52,521 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\doc1.pdf
+2025-09-21 17:46:52,522 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image1.jpg
+2025-09-21 17:46:52,523 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image2.png
+2025-09-21 17:46:52,523 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note1.txt
+2025-09-21 17:46:52,524 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note2.txt
+2025-09-21 17:46:52,525 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md
+2025-09-21 17:46:52,525 - WARNING - ⚠️ Potential ransomware detected: too many extension changes. Last file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md
+2025-09-21 17:47:04,451 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\doc1.pdf.encrypted
+2025-09-21 17:47:04,653 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image1.jpg.encrypted
+2025-09-21 17:47:04,855 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image2.png.encrypted
+2025-09-21 17:47:05,056 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note1.txt.encrypted
+2025-09-21 17:47:05,258 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note2.txt.encrypted
+2025-09-21 17:47:05,460 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md.encrypted
+2025-09-21 17:47:05,461 - WARNING - ⚠️ Potential ransomware detected: too many extension changes. Last file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md.encrypted
+2025-09-21 17:47:17,348 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\doc1.pdf
+2025-09-21 17:47:17,349 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image1.jpg
+2025-09-21 17:47:17,349 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\image2.png
+2025-09-21 17:47:17,350 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note1.txt
+2025-09-21 17:47:17,351 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\note2.txt
+2025-09-21 17:47:17,351 - INFO - Event: 'ext_changed' on file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md
+2025-09-21 17:47:17,352 - WARNING - ⚠️ Potential ransomware detected: too many extension changes. Last file: C:\Users\soham\Desktop\RansomwareDetectionTool\victim_files\README.md
